@@ -30,11 +30,26 @@ print bigDiff([10, 3, 5, 6])# 7
 print bigDiff([7, 2, 10, 9])# 8
 print bigDiff([2, 10, 7, 2])# 8
 
-#def centerdAverage(lista):
+def centeredAverage(lista):
+	sum = 0
+	max = lista[0]
+	min = lista[0]
+
+	for x in lista:
+		if x > max:
+			max = x
+
+	min = lista[0]
+
+	for a in lista:
+		if a < min:
+			min = a
 	
+	for b in lista:
+		sum = sum + b
 
+	return (sum - min - max) / (len(lista) - 2)
 
-
-#print centeredAverage([1, 2, 3, 4, 100])#3
-#print centeredAverage([1, 1, 5, 5, 10, 8, 7])#5
-#print centeredAverage([-10, -4, -2, -4, -2, 0])#-3
+print centeredAverage([1, 2, 3, 4, 100])#3
+print centeredAverage([1, 1, 5, 5, 10, 8, 7])#5
+print centeredAverage([-10, -4, -2, -4, -2, 0])#-3
